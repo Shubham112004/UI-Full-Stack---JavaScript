@@ -1,0 +1,23 @@
+													JAVASCRIPT [ES6+]
+- Light weight, JIT [Just In Time] compiled programming language
+- What is JIT?
+	Compiling techniques :-
+	1. JIT	[just in time]	-	the code is loaded in the browser and compiled in browser
+	2. AOT 	[ahead of time]	-	the compilation is done in application itsel and the it is loaded in the browser
+- Js supports various programming techniques and approches - functional progrsmming | structural progrsmming | imperative programming | object oriented programming etc..
+- Js is NOT an OOP language , it supports only few features of OOP
+- JS is used as- 
+	- client side with html
+	- server side with node.js
+	- database with mongodb
+	- animations with flash, 3DS max..
+
+- Evolution of js - 
+	first browser (mosaic) - GML, SGML - presentation | ECMA Script - client side
+	1990 - Tim Berners Lee - HTML
+	1994 - Netscape communications - Netscape Communicator - HTML - presentation & ECMA Script - not designed fot HTML so Netscape appointed "Brendan Eich" [developer at CERN lib] - named the script - Mocha - netscape changed the name to - Live Script - sun micro system - maintain it (Java specilist) - so they named it as - JavaScript
+	1998 - microsoft - Win-98 - Internet Explorer
+	2004 - Netscape Communicator - stops & gives Javascript to ECMA - ECMA named it as - ECMA Script
+
+* Js with HTML (client side) -
+	- to reduce burden on server
