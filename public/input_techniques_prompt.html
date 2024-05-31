@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Techniques - prompt</title>
+    <script>
+        function createFolder() {
+            folderName = prompt('Enter Folder name: ', 'New Folder');
+            if (folderName == null) {
+                document.write("You cancled!!");
+            } else if (folderName == "") {
+                document.write("provide a folder name");
+            } else {
+                document.querySelector("p").innerHTML += "Folder Created : " + folderName + "<br>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="createFolder()">Create Folder</button>
+    <p></p>
+</body>
+
+</html>

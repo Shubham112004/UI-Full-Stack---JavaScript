@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parseInt</title>
+    <script>
+        function submitClick() {
+            let age = document.getElementById("lstAge").value;
+            document.write("You will be " + (parseInt(age) + 1) + " in next year");
+        }
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>Select Age</dt>
+        <dd>
+            <select id="lstAge">
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+            </select>
+        </dd>
+    </dl>
+    <button onclick="submitClick()">Submit</button>
+</body>
+
+</html>

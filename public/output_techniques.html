@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output techniques</title>
+    <script>
+        //alert
+        /*
+        function deleteCkick() {
+            alert('Record deleted successfully!!');
+        }
+        */
+
+        //confirm
+        /*
+        function deleteCkick() {
+            res = confirm("Are you sure want to delete?");
+            console.warn("Record will be delted");
+            if (res == true) {
+                alert('Record Deleted!');
+                console.error("Deleted..you clicked ok");
+            } else {
+                alert('You Cancled!');
+                console.log("You cancled");
+            }
+        }
+        */
+
+        //documment.write()
+        /*
+        function deleteCkick() {
+            document.write("You deleted successfully!");
+        }
+        */
+
+        //innerText
+        /*
+        function deleteCkick() {
+            document.querySelector("h1").innerText = "<font color='red'>Record Deleted<font>";
+        }
+        */
+
+        //innerHTML
+        /*
+        function deleteCkick() {
+            document.querySelector("h1").innerHTML = "<font color='red'>Record Deleted<font>";
+        }
+        */
+
+        //outerHTML
+        /*
+        function deleteCkick() {
+            document.querySelector("h1").outerHTML = "<p>Record Deleted<p>";
+        }
+        */
+
+
+    </script>
+</head>
+
+<body>
+    <h2>Click delete button to remove record</h2>
+    <button onclick="deleteCkick()">Delete</button>
+    <h1 style="text-align: center;"></h1>
+</body>
+
+</html>

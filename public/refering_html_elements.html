@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Hierarchy</title>
+    <script>
+        // dom heirarchy 
+        /*
+        function bodyload() {
+            window.document.images[0].src = "../public/assets/img.jpg";
+            window.document.forms[0].elements[1].value = "Register";
+            window.document.forms[1].elements[1].value = "Login";
+        }
+        */
+
+        // name
+        /*
+        function bodyload() {
+            pic.src = "../public/assets/img.jpg";
+            frmReg.btnReg.value = "Register";
+            frmLog.btnLog.value = "Login";
+        }
+        */
+
+        //id *
+        /*
+        function bodyload() {
+            document.getElementById("pic").src = "../public/assets/img.jpg";
+            document.getElementById("btnReg").value = "Register";
+            document.getElementById("btnLog").value = "Login";
+        }
+        */
+
+        //selectors *
+        /*
+        function bodyload() {
+            document.querySelector("#pic").src = "../public/assets/img.jpg";
+            document.querySelector(".btn1").value = "Register";
+            document.querySelector(".btn2").value = "Login";
+        }
+        */
+
+        // common name *
+        /*
+        function bodyload() {
+            result = document.getElementsByName("pay");
+            alert("Total number of payment methods are: " + result.length);
+        }
+        */
+
+        // common class name
+        /*
+        function bodyload() {
+            result = document.getElementsByClassName("form-check-input");
+            alert("Total number of radios with form-check-input calss are: " + result.length);
+        }
+        */
+
+        // tag name
+        /*
+        function bodyload() {
+            result = document.getElementsByTagName("h2");
+            alert("Total number of h2 are: " + result.length);
+        }
+        */
+
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <img width="150" height="150" border="1" name="pic" id="pic">
+    <div>
+        <form name="frmReg">
+            <h2>Register</h2>
+            User Name : <input type="text"> <input type="button" id="btnReg" name="btnReg" class="btn1">
+        </form>
+    </div>
+    <div>
+        <form name="frmLog">
+            <h2>Login</h2>
+            Email : <input type="text"> <input type="button" name="btnLog" id="btnLog" class="btn2">
+        </form>
+    </div>
+    <br><br>
+    <div>
+        <fieldset>
+            <legend>Payment Modes</legend>
+            <input type="radio" class="form-check-input" name="pay"> Cash
+            <input type="radio" name="pay"> UPI
+            <input type="radio" class="form-check-input" name="pay"> Credit Card
+        </fieldset>
+    </div>
+</body>
+
+</html>

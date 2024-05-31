@@ -20,4 +20,173 @@
 	2004 - Netscape Communicator - stops & gives Javascript to ECMA - ECMA named it as - ECMA Script
 
 * Js with HTML (client side) -
-	- to reduce burden on server
+	- to reduce burden on server by - handling validations client side | handling interactions client side | DOM manipulations -- adding/removing elements, rendering new data into elements, update data in elements, etc..
+
+* Integrating Js into page -
+	-inline | embeded | external file
+
+* Refering HTML elements -
+	1. Refering HTML elements by using DOM hierarchy -
+		- it is faster in rendering
+		- if you change position of any element in page, then every time you have to update its position.
+	2. Refering HTML elements by using name -
+		- you can access any element directly by using its reference name
+		- you can't access child elements directly, you have to refer both parent and child hierarchy
+	3. Refering HTML elements by using id -
+		- document.getElementById()
+		- you can access any child element without refering its parent
+		- there will be conflict between css id and js id [every element cna be configured with only one id]
+	4. Refering HTML elements by using css selectors -
+		- document.querySelector()
+			type | class | id...
+		- can apply effects only to the first element, however it can handel data for multiple elements, also styles for multiple elements
+	5. Refering HTML elements having common name -
+		- document.getElementsByName()
+	6. Refering HTML elements having common class name -
+		- document.getElementsByClassName()
+	7. Refering all HTML elements by using tag name -
+		- document.getElementByTagName()
+
+* Js Output techniques -
+	- alert()
+	- confirm()
+	- console.log(), warn(), success(), error(), debug(), info(),...
+	- innerText
+	- innerHTML
+	- outerHTML
+	- document.write()
+
+* Js Input technique -
+	- prompt()
+		- it is like alert with input
+		- syntax- prompt('your msg', 'default msg');
+		- returns:
+			null -- on calcle
+			"" [empty] -- on ok without value
+			value -- on ok with value
+
+	- form input elements
+		- you can use form input elements like -
+		textbox, password, number, email, radio, checkbox, listbox, dropdown, etc...
+		- every form element must have reference id
+
+** What is Strict mode of Js?
+=> "use strict";
+	strict mode for Js allows to reduce code inconsistency, so that developers have to follow coading standards
+	<script>
+	"use strict";
+	x = 11;					//invalid - x is not defined | gives error
+	document.write("x = "+x);
+	<script>
+
+	<script>
+	x = 11;					//does not gives error
+	document.write("x = "+x);
+	<script>
+
+	<script>
+	"use strict";
+	var x;
+	x = 11;					//does not gives error
+	document.write("x = "+x);
+	<script>
+
+**How to write Js for Legacy Browsers [old version browsers] ?
+=> By enclosing the code in "HTML Comments" <!-- -->
+
+Js Comment - // sinle line comment
+			/* */ multi line comments
+
+* Js Language Basics - 
+	Varibles - storage locations in memory - can store a value & use it as a part of any expression | js allows to use varibles directly if it is not in strict mode
+		in strict mode varible configuration contains 3 phases -
+		a. Declaration		-	var x; [scope & name of varible]
+		b. Assignment		-	x = 10; [rendering value into varible after declering]
+		c. Initilization		-	var x = 10; [rendering value into varible while declering]
+
+	varibles in js - var | let | const
+		- var - defines function scope varible (you can declare in any block of a function and access from any another block in function) | var allows declering, assigning & initilization | allows shadowing & hoisting
+
+** What is Shadowing?
+=> process of re-declearing same name identifier within the scope
+
+** What is hoisting?
+=> it is a compiling technique, where compiler can find declerarion of varible before using it. Hense you can use a varible before declering.
+
+		- let - defines block scope varible (accessible only in the block where it is declered or to its inner blocks) | let allows declering, assigning & initilization | NOT allow shadowing & hoisting
+
+		- const - defines block scope varible | allows ONLY initilization (no declering & assigning) | NOT allow shadowing & hoisting
+
+** Why we need a const?
+=> const is required to initilize a memory
+	at the time of loading  application or component memory is initilize with some default value (undefined)
+
+** Can const change its value?
+=> Dynamically YES - 
+	const can be changed - 
+					const username = prompt("Enter Name");
+					document.write("Hello ! " + username);
+
+Global scope for varible - you can declare a varible in module scope [module scope : <script></script> ] , so that it is global and accessible to all functions in module
+
+** Can we declare a global varible inside function?
+=> YES, by using browser "window" object
+	syntax -
+		function f1(){
+			window.y = 20;
+		}
+		function f2(){
+			document.write("y = "+y);
+		}
+		f2();
+
+** To access a varible/function outside a module we use export - export var x = 10;
+
+Varible naming - 
+	must start with alphabet or underscore (to indiacte that varible not implemented, it requires further implementation) | other that _ no other special character allowed | length can't exceed more than 255 chars | don't use language keywords for varible name
+
+	Data Types - it defines data structure | determines the size and type of data
+		a) primitive - Immutable types (their structure will not change, have fixed range of value) use memory stack [LIFO]
+			number | string | boolean | null | undefined
+	Js is not strongly typed, it is implicitely typed language
+			
+			- Number type - Js number type refers to - signed integer		-10
+											unsigned integer	10
+											floating point		24.35 [max upto 2 decimal places & 2 integer value]
+											double			132.25, 56.231 [more than 2 decimal places or more than 2 integer value]
+											decimal			1235.2, 12.2564 [more than 3 decimal places or more than 3 integer value]
+											exponent			2e3 [2x10^3]
+											binary			0b101
+											octa				7o42
+											hexa				7f2d
+					Js uses "isNaN()" method to verify the number type
+						syntax - 
+								if(isNaN(value)){
+								}
+					Js can't identify a numeric value in string format, you have to explicitly convert into number - 
+						a) parseInt()
+						b) parseFloat()
+		
+						eg - 
+							var a = "10AB";
+							var b = 20;
+							var c = parseInt(a)+b;	//30
+			
+							var a = "AB10";
+							var b = 20;
+							var c = parseInt(a)+b;	//invalid - NaN
+
+							var a = "10AB20";
+							var b = 20;
+							var c = parseInt(a)+b;	//10+20 = 30
+					
+			- String type - gropu of chars enclosed in 
+						a) single quote	' '
+						b) double quote	" "
+						c) back tick	` `	document.write(`Hello ${username} You selected ${color} color for your design`);
+										${} -- data binding expression
+				escape sequence issues - special chars in a string can escape printing, you have to print the non-printable chars by using "\"
+
+			String handling in Js -
+
+		b) non-primitive - 
