@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <script>
+        function verifyPassword() {
+            var pwd = document.getElementById("txtPwd").value;
+            if (pwd.trim() == "admin") {
+                document.querySelector("h2").innerHTML = "Valid Password";
+            } else {
+                document.querySelector("h2").innerHTML = "Invalid Password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Your Password:
+    <input type="text" id="txtPwd"> <button onclick="verifyPassword()">Submit</button>
+    <h2></h2>
+
+    <script>
+        var mobilenumbers = "123546546, 216543218, 8611912342";
+        var result = mobilenumbers.split(',');
+        document.write(result[1]);
+    </script>
+</body>
+
+</html>

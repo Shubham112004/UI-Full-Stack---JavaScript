@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <script>
+        function verifyEmail() {
+            var email = document.getElementById("txtEmail").value;
+            var msg = document.querySelector("h2");
+            var atPos = email.indexOf("@");
+            if (atPos < 3) {
+                msg.innerHTML = "Invalid Email";
+            } else {
+                msg.innerHTML = "Email Verified";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Your Email</legend>
+        <input type="text" id="txtEmail"> <button onclick="verifyEmail()">Submit</button>
+    </fieldset>
+    <h2></h2>
+</body>
+
+</html>

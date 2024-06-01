@@ -187,6 +187,98 @@ Varible naming -
 										${} -- data binding expression
 				escape sequence issues - special chars in a string can escape printing, you have to print the non-printable chars by using "\"
 
-			String handling in Js -
+				String handling in Js -
+					string formating methods -
+					- bold()
+					- italics()
+					- sup()
+					- sub()
+					- fontcolor()
+					- fontsize()
+					- toUpperCase()
+					- toLowerCase()
+				
+					string property - 
+						- length - total no of chars
 
-		b) non-primitive - 
+					string manipulation -
+ 						- charAt() - returns the character at specified index
+						- charCodeAt() - returns the character ASCII code
+						- toUpperCase()
+						- toLowerCase()
+						- slice() - extract chars between specified index
+						- substr() - return specified number of chars from given index
+						- substring() - return the chars from specific index in any direction
+						- indexOf() - finds character in a string and returns its index position [if char not found - it returns -1]
+						- lastIndexOf() - will return last occurance index
+							welcome	- indexOf("e")	//1
+							welcome	- lastIndexOf("e")  //6
+						- startsWith()	] - these functions used to verify starting and ending chars in string
+						- endsWith()	] - these functions return boolean true when string is starting or ending with specified chars
+						- match() - used to verify and compare given string with any regular expresion, it returns true if string format is as per 								regular expression | in Js regular expression is enclosed in "/ /"
+						- trim() - used to remove leading spaces in a string
+						- split() - used to split the string at specified delimeter and return an array
+
+** What is charCodeAt()?
+=> charAt() returns char at specified index
+	charCodeAt() returns its character code as per UTF standards - A=65, Z=90
+
+** What is difference between slice(), substr() & substring()?
+=> slice() - it can read chars between specified start and end index. if end is not defined then it will read upto end of string. end index must be grater than 		start index (can't read backward)
+		slice(startIndex, endIndex);
+     substr() - it can read specified number of chars form given index number
+		substr(startIndex, countOfChars);
+     substring() - it can read from specified index to any direction
+		substring(srartIndex, endIndex);		//endIndex can be less than startIndex (can read backward)
+
+			- Boolean type - used in desicion making | handle 2 values - true (1) & false (0)
+		
+			- Undefined type - it specifies that value is not supplied into reference | verified using "undefined" keyword | value is not supplied during 							copilation
+
+** What is the difference between undefined and not-defined?
+=> undefined - reference is there but value is not defined
+     not-defined - reference is not defined
+
+			- Null type -  it is an exception type [occurs at run time] | null indicates that value is not supplied during run time | verified using "null" 						keyword
+
+			
+		b) non-primitive - Mutable types (their structure can change, no fixed range of value) use memory heap [FIFO]
+			array | object | map
+
+			array - organizing in order and accessing in random order
+			stack - organizing in order and accessing last one first [LIFO]
+			queue - organizing in order and accessing first one lasr [FIFO]
+
+			- Array type - 
+				What is purpose of array - array is used in computer programming to reduce overhead and complexity | arrays will reduce overhead by 				storing values in sequential order & arrays will reduce complexity by storing multiple values under one name | arrays can handle any 				type of value | array size can be changed dynamically
+				- few technologies can't allocate various types of memory in sequential order hence they restrict array to same type of values and size 					can't be changed dynamically [c, c++, java, .net...]
+			- configure array
+				1. declaring array : var arrayName;
+				2. initilization of memory for array : var arrayName = []; OR var arrayName = new Array();
+					you can also assign memory for array : var arrayName;
+												   arrayName = [];
+
+** What is the difference between array "[]" meta character and "Array()" constructor?
+=> Array() constructor can define size for array, however size can be changed dynamically.
+
+			- storing values into array -
+				- values are stored and accessed from ann array by using property [property maps index in memory]
+			- reading values from array - 
+				- you can use reference of property :  values[0] / values["1"]...
+				- by using array methods -
+					- toString()	:	reads & returns all array elements in string format [,]
+					- join()		:	reads & returns all array elements with custom delimeters
+					- slice()		:	reads elements between specified index
+					- filter()		:	returns all elements that match given condition
+					- find()		:	returns only the first element that match given condition
+					- map()		:	it is an iterator for processing elements - it can read elements from a collection in sequential order | it does 									not require any condition, initilization and counter
+
+					- reading values by using loops and external iterators
+						- for()
+						- while()
+						- do while()
+						- for..in		//iterator of properties
+						- for..of		//iterator of values
+
+ Dynamically Creating and Adding DOM elements using Array
+	- 

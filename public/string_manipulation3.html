@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+</head>
+
+<body>
+    <script>
+        var msg = "Welcome to JavaScript";
+        document.write(msg.slice(0, 7) + "<br>");    //[0 to 6]
+        document.write(msg.slice(0) + "<br>");      //[0 to end]
+        document.write(msg.slice(9) + "<br>");      //[9 to end]
+        document.write(msg.slice(9, 0) + "<br>");            // NOT POSSIBLE in slice
+
+        document.write(msg.substr(9, 5) + "<br>");           //from 7th index it will read 3 chars
+
+        document.write(msg.substring(9, 0) + "<br>");       //[9 to start]
+        document.write(msg.substring(0, 9) + "<br>");          //[0 to 9]  
+        document.write(msg.substring(9));                   //[9 to end]
+    </script>
+</body>
+
+</html>

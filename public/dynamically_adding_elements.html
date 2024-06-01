@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically adding elements using array</title>
+    <script>
+        var products = ["../public/assets/img.jpg", "../public/assets/visa.png", "../public/assets/masterCard.png"];
+        function bodyLoad() {
+            for (var path of products) {
+                var pic = document.createElement("img");
+                pic.src = path;
+                pic.width = "100"
+                pic.height = "100"
+                document.getElementById("container").appendChild(pic);
+
+                var opt = document.createElement("option");
+                opt.text = path;
+                document.getElementById("pathSelect").appendChild(opt);
+
+                var li = document.createElement("li");
+                li.innerHTML = path;
+                document.getElementById("pathList").appendChild(li);
+            }
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <div id="container">
+
+    </div>
+    <h2>Select Path</h2>
+    <select id="pathSelect">
+
+    </select>
+    <h2>Image Path List</h2>
+    <ul id="pathList">
+
+    </ul>
+</body>
+
+</html>

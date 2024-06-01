@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Iterators</title>
+</head>
+
+<body>
+    <script>
+        let sales = [24251, 20352, 80000, 62530];
+        for (var prop in sales) {
+            document.write(prop + "<br>");
+        }
+        for (var val of sales) {
+            document.write(val + "<br>");
+        }
+
+        for (prop in sales) {
+            document.write(`[${prop}] - ${sales[prop]} <br>`);
+        }
+    </script>
+</body>
+
+</html>

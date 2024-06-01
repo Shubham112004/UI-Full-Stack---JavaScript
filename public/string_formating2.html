@@ -1,0 +1,35 @@
+<!-- Formating a string dynamically using styles -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srting Formating</title>
+    <script>
+        function colorChange() {
+            let color = document.getElementById("color").value;
+            document.querySelector("p").style.color = color;
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Choose Effect</legend>
+        <dl>
+            <dt>Choose Color</dt>
+            <dd>
+                <select id="color" onchange="colorChange()">
+                    <option>Red</option>
+                    <option>Green</option>
+                    <option>Yellow</option>
+                </select>
+            </dd>
+        </dl>
+    </fieldset>
+    <p>Welcome to JavaScript</p>
+</body>
+
+</html>

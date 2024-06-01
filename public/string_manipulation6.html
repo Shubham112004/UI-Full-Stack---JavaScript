@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        meter {
+            height: 30px;
+        }
+
+        .sub-container {
+            width: 350px;
+            border: 2px solid rgb(161, 158, 158);
+            padding: 50px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 550px;
+        }
+    </style>
+    <script>
+        function verifyPassword() {
+
+            var grade = document.getElementById("grade");
+            function showGrade(min, max, value, low, high) {
+                grade.min = min;
+                grade.max = max;
+                grade.value = value;
+                grade.low = low;
+                grade.high = high;
+            }
+
+            var password = document.getElementById("txtPwd").value;
+            var regularExp = /(?=.*[A-Z])\w{4,15}/;
+            var msg = document.getElementById("msg");
+            if (password == "") {
+                msg.innerHTML = "Password Required";
+                msg.className = "text-danger";
+            } else {
+                if (password.match(regularExp)) {
+                    msg.innerHTML = "Strong Password";
+                    msg.className = "text-success";
+                    showGrade(1, 100, 100, 0, 0);
+                } else {
+                    if (password.length < 4) {
+                        msg.innerHTML = "Poor Password";
+                        msg.className = "text-danger";
+                        showGrade(1, 100, 100, 60, 80);
+                    } else {
+                        msg.innerHTML = "Weak Password";
+                        msg.className = "text-warning";
+                        showGrade(1, 100, 100, 40, 80);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <div class="main-container">
+        <div class="sub-container mt-5">
+            <h2 style="text-align: center; margin-bottom: 50px;">Verify Password</h2>
+            <input type="password" onkeyup="verifyPassword()" id="txtPwd" class="form-control">
+            <div id="msg">
+
+            </div>
+            <div>
+                <meter id="grade" min="1" max="100" class="w-100"></meter>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function varifyCard() {
+            var cardNumber = document.getElementById("txtCard").value;
+            var cardImg = document.getElementById("cardImg");
+            if (cardNumber.startsWith("4444")) {
+                cardImg.src = "../public/assets/masterCard.png";
+            } else if (cardNumber.startsWith("5555")) {
+                cardImg.src = "../public/assets/visa.png";
+            } else {
+                cardImg.src = "";
+                cardImg.alt = "N/A";
+            }
+        }
+        function verifyEmail() {
+            var email = document.getElementById("txtEmail").value;
+            if (email.endsWith("gmail.com")) {
+                document.getElementById("msg").innerHTML = "Verified".fontcolor('green');
+            } else {
+                document.getElementById("msg").innerHTML = "Invalid".fontcolor('red');
+            }
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <fieldset>
+        <legend>Verify Details</legend>
+        <div>
+            <h3>Card Number</h3>
+            <div class="input-group">
+                <input type="text" id="txtCard" onkeyup="varifyCard()" class="form-control">
+                <img class="input-group-text img-fluid" id="cardImg" width="100" height="50">
+            </div>
+            <h3>Your Gmail</h3>
+            <div>
+                <input type="text" onkeyup="verifyEmail()" id="txtEmail" class="form-control">
+            </div>
+            <div id="msg">
+
+            </div>
+        </div>
+    </fieldset>
+</body>
+
+</html>

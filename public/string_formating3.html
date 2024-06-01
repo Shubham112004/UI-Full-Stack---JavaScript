@@ -1,0 +1,70 @@
+<!-- Formating a string dynamically using className -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Formating</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function changeTheme() {
+            let tehmeCheckBox = document.getElementById("theme");
+            let formContainer = document.getElementById("formContainer");
+            if (tehmeCheckBox.checked) {
+                formContainer.className = "dark-theme";
+                document.querySelector("button").className = "btn btn-light w-100";
+            } else {
+                formContainer.className = "light-theme";
+                document.querySelector("button").className = "btn btn-dark w-100";
+            }
+        }
+    </script>
+    <style>
+        .form {
+            border: 2px solid black;
+            padding: 20px;
+            width: 250px;
+            margin-top: 30px;
+        }
+
+        .dark-theme {
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+            padding: 20px;
+            width: 250px;
+            margin-top: 30px;
+        }
+
+        .light-theme {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            padding: 20px;
+            width: 250px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="form" id="formContainer">
+        <div class="form-switch">
+            <input type="checkbox" onchange="changeTheme()" class="form-check-input" id="theme"> Dark Theme
+        </div>
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input class="form-control" type="text"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" class="form-control"></dd>
+            <dt>Email</dt>
+            <dd><input type="email" class="form-control"></dd>
+        </dl>
+        <button class="btn w-100">Login</button>
+    </div>
+</body>
+
+</html>
