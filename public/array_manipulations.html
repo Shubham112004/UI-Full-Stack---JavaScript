@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var Cities = ["Delhi", "Pune"];
+        function loadCities() {
+            document.getElementById("lstCites").innerHTML = "";
+            for (var city of Cities) {
+                var opt = document.createElement("option");
+                opt.text = city;
+                document.getElementById("lstCites").appendChild(opt);
+            }
+        }
+        function addClick() {
+            var cityName = document.getElementById("txtCity").value;
+            var cityIndex = Cities.indexOf(cityName);
+            if (cityIndex == -1) {
+                Cities.push(cityName);
+                alert(`${cityName} Added to List`);
+                loadCities();
+                document.getElementById("txtCity").value = "";
+            } else {
+                alert("City Exists, Try Another!!");
+            }
+        }
+        function removeClick() {
+            var selectedCityName = document.getElementById("lstCites").value;
+            var selectedCityIndex = Cities.indexOf(selectedCityName);
+            alert(`${Cities.splice(selectedCityIndex, 1)} Removed`);
+            loadCities();
+        }
+        function sortReverse() {
+            Cities.reverse();
+            loadCities();
+        }
+        function sortAsc() {
+            Cities.sort();
+            loadCities();
+        }
+        function bodyLoad() {
+            loadCities();
+        }
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+    <h2>Array Manipulations</h2>
+    <div class="row">
+        <div class="col-4">
+            <fieldset>
+                <legend>Add new City</legend>
+                <div class="input-group">
+                    <input type="text" id="txtCity" class="form-control">
+                    <button class="btn btn-info" onclick="addClick()">Add</button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-8">
+            <h2>Cities List</h2>
+            <div class="input-group">
+                <select class="form-select" id="lstCites">
+
+                </select>
+                <button class="btn btn-warning" onclick="removeClick()">Remove City</button>
+                <button class="btn btn-dark" onclick="sortReverse()">Reverse Sort</button>
+                <button class="btn btn-secondary" onclick="sortAsc()">Sort</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

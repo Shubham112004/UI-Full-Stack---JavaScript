@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back Mechanism & Destruction</title>
+</head>
+
+<body>
+    <script>
+        var authorize = ["admin", function () { document.write("Login Success!!") }, function () { document.write("Invalid Password") }];
+        var [password, success, failure] = authorize;
+        var yourPassword = prompt("Enter Password");
+        if (yourPassword == password) {
+            success();
+        } else {
+            failure();
+        }
+    </script>
+</body>
+
+</html>

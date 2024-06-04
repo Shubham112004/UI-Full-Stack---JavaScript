@@ -281,4 +281,62 @@ Varible naming -
 						- for..of		//iterator of values
 
  Dynamically Creating and Adding DOM elements using Array
-	- 
+	- document.createElement("elementName");
+	- appendChild();
+
+**What type of data we can store in Array?
+=> Array can handle any type of data, both primitive, non-primitive and functions
+
+**Why we need a function in array?
+=> Array is defined with function to handle call back mechanism (a technique where functions will execute according to situation)
+
+Array destruction (ES5+)
+	without destruction :-						with destruction:-
+		var values = [10, "John"];						var values = [10, "John"];
+		var sno = value[0];							var [sno, nm] = values;
+		var nm = value[1];
+
+-- functions in array must be anonymous [functions will not have a name] -- function(){}
+
+Adding values into array - 
+1. push()		:	add new values as last elements			arrayName.push("item1","item2");
+2.unshift()		:	add new values as first elements		arrayname.unshift("item1","item2");
+3.splice()		:	add new values at any specific position	arrayName.splice(startIndex, deleteCount, "item1","item2");
+
+Removing values from array -
+1.pop()		:	removes & returns the last item				arrayName.pop();
+2.shift()		:	removes & returns the first item			arrayName.shift();
+3.splice()		:	removes & returns item at specific index		arrayName.splice(startIndex, deleteCount);
+
+Sorting array elements - 
+1. sort()		:	it sorts the items in ascending order
+2. reverse()	:	it sorts the items in reverse order of theri occurance
+
+Searching for element in array - 
+1. find()
+2. filter()
+3. indexOf()
+4. lastIndexOf()
+
+JSON - javascript object notation
+Object type - Alan Kay
+- to keep releted data and logic under onne reference
+- object stores data in properties defines logic using function
+- it is a key and value collection  [keys are string type and values can be any type] 
+	syntax :
+		let obj ={
+				"key":value,
+				key:value,
+				key:function(){}
+			     }
+	the properties of an object can be accessed within object by using "this" keyword | outside object you can access with reference of any object name
+	- object act as reusable template with sample data an logic which you can implement and customize according to requirement [also known as pseudo 	  class]
+	- if object is representing a format of data (not logic) then it is known as JSON
+
+Ajax Calls in js with fetch method - 
+	- Ajax is asynchronous javascript and xml
+	- it allows partial post back [it can post only a sepcific portion of page]
+	- it uses XmlHttpRequest object
+	- fetch() - uses asynchronous request for fetching data from API
+		syntax - 
+			fetch("url").then(function(){get data}).then(function(){convert data into json});

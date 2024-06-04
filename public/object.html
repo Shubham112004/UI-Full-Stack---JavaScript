@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Object></Object></title>
+</head>
+
+<body>
+    <script>
+        let product = {
+            "Name": "",
+            Price: 0,
+            Stock: false,
+            "Qty": 0,
+            "Cities": [],
+            "Rating": { Rate: 0, Count: 0 },
+            "Total": function () {
+                return this.Qty * this.Price;
+            },
+            "Print": function () {
+                document.write(`Name = ${this.Name}<br>Price = ${this.Price}<br>Stock = ${this.Stock}<br>Qty = ${this.Qty}<br>Total = ${this.Total()}<br>Shipped to = ${this.Cities.toString()}<br>Rating = ${this.Rating.Rate}<br>Rating from ${this.Rating.Count} peoples <br>`);
+            }
+        }
+        document.write(`<h2>TV Details</h2>`);
+        product.Name = "Samsung Tv";
+        product.Price = 45825.25;
+        product.Stock = true;
+        product.Qty = 45;
+        product.Cities = ["Delhi", "Mumbai"]
+        product.Rating.Rate = 4.5;
+        product.Rating.Count = 4582;
+        product.Print();
+
+        document.write(`<h2>Shoe Details</h2>`);
+        product.Name = "Nike Casuals";
+        product.Price = 5585.5;
+        product.Stock = false;
+        product.Qty = 5;
+        product.Cities = ["Pune", "Delhi", "Mumbai"]
+        product.Rating.Rate = 4.2;
+        product.Rating.Count = 452;
+        product.Print();
+    </script>
+</body>
+
+</html>
