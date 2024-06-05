@@ -340,3 +340,79 @@ Ajax Calls in js with fetch method -
 	- fetch() - uses asynchronous request for fetching data from API
 		syntax - 
 			fetch("url").then(function(){get data}).then(function(){convert data into json});
+
+- Map type -
+	- similar to object with key and value collection
+
+** What is the difference between Map & Object?
+=> 	Object										Map
+	-----------------------------------------------------------------------------------------------------
+	1. key & value collection					1. key & value collection
+	2. key is only string type					2. key can be anyu type
+	3. need expicit iterators to read				3. it provides implicit iterators
+		key & values							to read keys & values
+		for..in for..of							keys(), values(), entries()
+	4. slow in accessing						4. faster than object
+	5. size of keys is unknown					5. allows to access size of keys
+
+Map methods - 
+	1. set()	:	adds a new value
+	2. get()	:	fetch the value by using key reference
+	3. keys()	:	returns all keys
+	4. values()	:	returns all values
+	5. entries():	returns both key and values
+	6. delete()	:	deletes specific key
+	7. clear()	:	deletes all entries
+
+- Date type -
+	JS date values are defined by using "Date()" constructor [it loads the current date and time into memory]
+		var now = new Date();
+	you can configure any specific date and time by using date value in constructor
+		var now = new Date("2004-01-01");
+	you can access the date and time valuesby using following methods -
+		getHours()	:	returns hour in 24 hr format
+		getMinutes()	:	returms minutes number 0-59
+		getSeconds()	:	returns seconds number 0-59
+		getMiliSeconds()	:	returns mili seconds number 0-99
+		getDate()		:	returns date number [27]
+		getDay()		:	returns weekday number [0=sunday]
+		getMonth()	:	returns month number [0=jan]
+		getFullYear()	:	returns year number [2004]
+		toLocalDateString()	:	returns complete date
+		toLocalTimeString()	:	returns complete time
+		
+	Js provides following methods for setting a new date or time
+		setHours()
+		setMinutes()
+		setSeconds()
+		setMiliSeconds()
+		setDate()
+		setMonth()
+		setYear()
+
+	Js Timmer Events -
+		setInterval()	:	used to perform specified task repeatedly at given time interval
+		clearInterval()
+		setTimeout()
+		clearTimeout()
+
+			setInterval(functionName, timeInterval);
+		according to - Clock : 100 mili seconds = 1 sec & CPU : 1000 mili seconds = 1 sec
+
+- Regular Expression type -
+	- reuglar expression is a group of meta characters and quantifiers enclosed in "/ /"
+		let regExp /\+91[0-9]{10}/;
+	- regular expression is verified by using "match()" method
+		let mobile = "+919604900934";
+		if(mobile.match(regExp)){
+		}
+
+- Math Object -
+	- it provides set of properties & methods to handle mathematical operations
+	Math.PI()
+	Math.sqrt()
+	Math.sin()
+	Math.tan()
+	Math.pow()
+	Math.round()
+	Math.random() etc...

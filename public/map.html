@@ -1,0 +1,12 @@
+<script>
+    var collection = new Map();
+    collection.set("TV", "Samsung");
+    collection.set(1, "Lenovo");
+    document.write(collection.get(1) + "<br>");
+
+    for (var allEnt of collection.entries()) {
+        document.write(allEnt + "<br>");
+    }
+
+    document.write("total count of keys: " + collection.size);
+</script>

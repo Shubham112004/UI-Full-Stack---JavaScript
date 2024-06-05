@@ -1,0 +1,13 @@
+<script>
+    let Mfd = new Date("2004-01-24");
+    let months = ["January", "Feb", "Mar", "Apr"];
+    let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    Mfd.setDate(1);
+    document.write(`
+        Date: ${Mfd.getDate()}<br>
+        Month: ${months[Mfd.getMonth()]}<br>
+        Weekday: ${weekdays[Mfd.getDay()]}<br>
+        Year: ${Mfd.getFullYear()}<br>
+        Complete Date: ${weekdays[Mfd.getDay()]}, ${Mfd.getDate()} - ${months[Mfd.getMonth()]} ${Mfd.getFullYear()}
+    `)
+</script>
