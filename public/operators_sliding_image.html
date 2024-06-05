@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Image - use of operators</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var id = 1;
+        function getProducts(url) {
+            fetch(url)
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    document.getElementById("title").innerHTML = data.title;
+                    document.getElementById("photo").src = data.image;
+                    document.getElementById("description").innerHTML = data.description;
+                })
+        }
+        function nextProd() {
+            id++;
+            getProducts(`https://fakestoreapi.com/products/${id}`)
+        }
+        function prevProd() {
+            id--;
+            getProducts(`https://fakestoreapi.com/products/${id}`)
+        }
+        function bodyLoad() {
+            getProducts(`https://fakestoreapi.com/products/${id}`)
+        }
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="card" style="width: 800px; height: 500px;">
+            <div class="card-header text-center">
+                <h5 class="card-title" id="title"></h5>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top" id="photo" style="width: 250px; height: 250px;" alt="...">
+                <p class="card-text" id="description"></p>
+
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-warning" onclick="prevProd()"><span
+                        class="bi bi-chevron-bar-left"></span></button>
+                <button class="btn btn-warning" onclick="nextProd()"><span
+                        class="bi bi-chevron-bar-right"></span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

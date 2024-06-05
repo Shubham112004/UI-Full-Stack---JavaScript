@@ -416,3 +416,35 @@ Map methods -
 	Math.pow()
 	Math.round()
 	Math.random() etc...
+
+- Js Operators
+	based on operands : 
+		1. unary operator
+			x++, --y,..
+		2. binary operator
+			x+y, x*y,...
+		3. ternary operator
+			? :
+			(condition)?if_true:if_false
+	based on type of value they return : 
+		1. arithmetic operator	:	number			[+, -, *, /(returns quotient), %(returns reminder), **, ++, --]
+		2. conditional operator	:	boolean			[==, ===, !==, !=, >, >=, <, <=]
+		3. logical operaotrs		:	boolean			[&&, ||, !]
+		4. assignment operators	:	number			[+=, -=, *=, /=, %=]
+		5. bitwise operator		:	binary			
+		6. special operators		:	vary in functionality	[typeof [it's a keyword], instanceof [it's a objec](used to check class name, from where the 													given instance is derived), in (used to verify existance of any property in object), of (used to 												read all values of a collection using iterator [for..of], void (discards the return value), ternary 												operator "? :"]
+
+	in case of arithmetic operators -
+	- any operation with undefined is NaN except string
+	- any opertaion with null will return number except string
+
+** What is the difference between =, ==, === operators?
+=> =		to assign a value
+     ==	to compare 2 values of different types
+    ===	to compare 3 values of same types
+- all comparision operators return boolean value (true/false)
+
+** What is the difference between break and return?
+=> Both are jump statements
+	"break" will terminate the block but will stay in script
+	"return" will terminate the script
