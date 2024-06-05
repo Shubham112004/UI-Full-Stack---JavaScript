@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Calls - Fakestore api</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function getCategory() {
+            fetch("https://fakestoreapi.com/products/categories")
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    data.unshift("All")
+                    for (var item of data) {
+                        var opt = document.createElement("option");
+                        opt.text = item.toUpperCase();
+                        opt.value = item;
+                        document.querySelector("select").appendChild(opt);
+                    }
+                })
+        }
+
+        function getProducts(url) {
+            document.getElementById("productsContainer").innerHTML = "";
+            fetch(url)
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    for (var item of data) {
+                        var div = document.createElement("div");
+                        div.className = "card m-2 p-2";
+                        div.style.width = "280px";
+                        div.innerHTML = `
+                            <img src=${item.image} class="card-img-top" height="200">
+                            <div class="card-header" style="height:120px" >
+                                <p>${item.title}</p >
+                            </div >
+                            <div class="card-body">
+                                <p>${item.price}</p>
+                                <p>Rating: ${item.rating.rate}</p>
+                                <p>Count: ${item.rating.count}</p>
+                            </div>
+                            <div class="card-footer">
+                                <button onclick="addToCart(${item.id})" class="btn btn-warning w-100">
+                                    <span class="bi bi-cart4"></span>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        `;
+                        document.getElementById("productsContainer").appendChild(div);
+                    }
+                })
+        }
+        function bodyLoad() {
+            getCategory();
+            getProducts("http://fakestoreapi.com/products");
+            getCartItemsCount();
+        }
+        function categoryChanged() {
+            var categoryName = document.getElementById("lstCategories").value;
+            if (categoryName == "All") {
+                getProducts("http://fakestoreapi.com/products");
+            } else {
+                getProducts(`http://fakestoreapi.com/products/category/${categoryName}`);
+            }
+        }
+        var cartItems = [];
+        var count = 0;
+        function getCartItemsCount() {
+            count = cartItems.length;
+            document.getElementById("cartCount").innerHTML = count;
+        }
+
+        function addToCart(id) {
+            fetch(`http://fakestoreapi.com/products/${id}`)
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    cartItems.push(data);
+                    alert("Item Added to Cart!!")
+                    getCartItemsCount();
+                })
+        }
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+    <header>
+        <h1 class=" bg-warning text-center text-white p-2"><span class="bi bi-cart4"></span> Shopping Online</h1>
+    </header>
+    <div class="row mt-3">
+        <div class="col-2">
+            <h5>Select a Category</h5>
+            <form>
+                <select class="form-select" id="lstCategories" onchange="categoryChanged()">
+
+                </select>
+            </form>
+        </div>
+        <div class="col-8">
+            <div id="productsContainer" class="d-flex flex-wrap overflow-auto justify-content-evenly"
+                style="height: 660px; width: 100%;">
+
+            </div>
+        </div>
+        <div class="col-2">
+            <h5 class="text-center">CheckOut</h5>
+            <button class="btn btn-warning ms-5">[<span id="cartCount"></span>] <span class="bi bi-cart3"></span> Your
+                Cart Items</button>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

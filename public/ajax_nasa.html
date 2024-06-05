@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax calls with fetch method</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyLoad() {
+            fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    for (var item of data.photos) {
+                        var tr = document.createElement("tr");
+                        var tdPhotoId = document.createElement("td");
+                        var tdCameraName = document.createElement("td");
+                        var tdPhoto = document.createElement("td");
+                        var tdRoverName = document.createElement("td");
+
+                        tdPhotoId.innerHTML = item.id;
+                        tr.appendChild(tdPhotoId);
+
+                        tdCameraName.innerHTML = item.camera.full_name;
+                        tr.appendChild(tdCameraName);
+
+                        var img = document.createElement("img");
+                        img.src = item.img_src;
+                        img.width = 200;
+                        img.height = 200;
+                        tdPhoto.appendChild(img)
+                        tr.appendChild(tdPhoto)
+
+                        tdRoverName.innerHTML = item.rover.name;
+                        tr.appendChild(tdRoverName)
+                        document.querySelector("tbody").appendChild(tr);
+                    }
+                })
+        }
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+    <h2>NASA Mars Rover Photos</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Photo ID</th>
+                <th>Camera Name</th>
+                <th>Photo</th>
+                <th>Rover Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
