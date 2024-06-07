@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        class employee {
+            firstname;
+            lastname;
+            desigination;
+            print() {
+                document.write(`${this.firstname} ${this.lastname} - ${this.desigination}<br>`);
+            }
+        }
+        class developer extends employee {
+            firstname = "Shubham";
+            lastname = "Gaikwad";
+            desigination = "Developer";
+            role = "Developer Role: Build, Debug, Test, Deploy<br>";
+            print() {
+                super.print();
+                document.write(this.role);
+            }
+        }
+        class admin extends employee {
+            firstname = "John";
+            lastname = "Ray";
+            desigination = "Admin";
+            role = "Admin Role: Authentication, Authorization<br>";
+            print() {
+                super.print();
+                document.write(this.role);
+            }
+        }
+        class manager extends employee {
+            firstname = "David";
+            lastname = "Kaly";
+            desigination = "Manager";
+            role = "Manager Role: Approvals<br>";
+            print() {
+                super.print();
+                document.write(this.role);
+            }
+        }
+        let Employees = new Array(new developer(), new admin(), new manager());  //polymorphism
+        let des = prompt("Enter Designiation");
+        for (var emp of Employees) {
+            if (emp.desigination == des) {
+                emp.print();
+            }
+        }
+    </script>
+</body>
+
+</html>

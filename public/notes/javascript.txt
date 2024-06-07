@@ -448,3 +448,216 @@ Map methods -
 => Both are jump statements
 	"break" will terminate the block but will stay in script
 	"return" will terminate the script
+
+JS Statements - used to control execution flow
+
+	1. selection statements - if, else, switch, case, default
+
+[lect67]
+** Can we define switch without default?
+=> Yes. Without default there will be no alternative to execute
+
+** Can we define default above or before case?
+=> Yes.
+
+** Can we define case wihtout break?
+=> Yes. But execution continues to next case and stops when break occured or will stop at the end of switch
+
+** Can we define case with return as jump statement?
+=> Yes.
+
+** What is difference between break and return?
+=> break will stop and stays in script & return will stop the script it quits the block
+
+** Can we define value as string type?
+=> Yes. but case senstive
+
+** How to handle multiple case values for a set of statements?
+=> a) you can define multiple cases for one block
+     b) you can change the capitilization for text
+
+** How to define case for range of values?
+=> by using boolean expression then switch can have only boolean true | if multiple conditions are matching, then it will execute only the first
+
+** Can we define "if" condition in switch case?
+=> Yes
+
+** Can we define a switch inside case?
+=> No not recommanded (abnormal behiviour)  insted write it a function and call it using function
+
+	2. Looping Control & Iteration Statements
+		- for, while, do while
+		- "for" loop - used when the exact iterations are known to developer and iterartion count will not change dynamically [but in js using array we can change count 			dynamically so all loops in js are same] | requires initilization, condition & counter | initilization, condition & counter values are optional in 'for' decleration 			(i.e. we can declare those inside, outside the for loop also - for( ; ; ){} )
+		- "while" loop - used when iterations are unknown & iteration counter may change dynamically
+		- "do while" loop - similar to while loop but ensures that the statements are executes atleast once even when the condition is false 
+
+		Iterators -  used to read elements from a collection in sequential order | does not require initilization, condition, counter
+			- for.. in [to read all properties from collection]
+			- for.. of [to read all values from collection]
+
+	3. jump statements
+		- continue - it skips the current counter and continues to next counter
+		- break
+		- return 
+		
+** What is difference between loop & recursion?
+=> 
+
+Exception Handling Statements -  
+
+** What is the purpose of exception handling?
+=> used to avoid abnormal termination
+
+- js exception handling statements are - 
+	try		- monitering block. it contains statements to execute
+	catch	- it is a handler block. it will catch the execption thrown by the application
+	throw	- it explicitely throws exception & message
+	finally	- it comprises of statements to execute in all situations
+
+Javascript Functions - used for refactor [a technique used to extract set of statements into function]
+	- allows encapsulation & reusability
+	- function configuration comprises of -
+		decleration : function FunctionName(paramaters)
+		signature : FunctionName(paramaters)
+		defination : {}
+	- paramaters passed in decleration of function - formal paramaters
+	- paramaters passed in function calling - actual paramater
+
+** What is formal paramater?
+** What is actual paramater?
+** How a function is called?
+=> By using its signature
+
+- function can be paramaterless or paramaterized | function requires paramaters in order to modify  the functionality | function can have multiple paramaters | functional paramater have order dependency | function can have any type of paramaters (primitive or non-primitive)
+
+rest paramater - [ES5+]
+- a single rest paramater can allow multiple arguments
+- a rest paramater is defined by using "...paramaterName"
+	syntax - 
+		function Name(...restParam)
+		{
+		}
+		Name(arg1, arg2, arg3)
+- every function can have only one paramater
+- rest paramater must be last paramater in formal list
+
+** Why rest paramater must be last paramater?
+** Why function can't have multiple rest paramaters?
+
+- Function with return type defined -
+- function usually discards the return type, hence memory is only allocated to perform functionality
+- if a function is defined with "return" along with functionality, then it can allocate memory to store the results returned by function
+	function Name()
+	{
+		return operation;
+	}
+- if return is not using any operation then it is used to terminate the execution [any statement defined after return statement, is not reachable]
+
+** Can we define return keyword in a function that does not return value?
+=> Yes. it os used as jump statement
+
+	function f1(a,b){
+		return
+		a+b;		// un-reachable code
+	}
+	f1(2,3)	=> gives undefined
+
+- Function Recursion - technique of calling a function within the context of current function
+- Function Closure - technique of configuring a function inside another function [allows outer function to access the members of inner function]
+
+- Anonymous Function [function without name] - used in call backs (a technique of accessing function & loading according to state and situation)
+
+- Arrow Functions - used to define function in short-hand technique (you can minify the function decleration & defination)
+	()	:	configure function with paramaters
+	=>	:	configure return value
+	{}	:	configure set of statements
+	
+		function hello(msg){				var hello = msg => `Hello! ${msg}`;
+			return `Hello! ${msg}`;
+		}
+
+		function welcome(){						var welcome = () =>document.write("Welcome to Js");
+			document.write("Welcome to Js");
+		}
+
+		function add(a,b){				var add = (a,b) => a+b;
+			return a+b;
+		}
+
+		function Print(){					var Print = () => {document.write("statemet1"); document.write("statemet2");}
+			document.write("statemet1");
+			document.write("statemet2");
+		}
+	also called as LAMBDA fun/expression
+
+Js OOP - [Johan Oly & Kristian Nygaard] 
+
+** Is Js OOP lang?
+=> No. it suooorts some features of oop
+
+Genereal - 
+Features of OOP -
+- sode reusability | code seperation | code extensibility | code security
+& Characterstics of OOP -
+- inheritance | encapsulation | polymorphism | abstraction
+
+- Modules in Js - set of functions, values & classes | modules are used to build library for application & you can import and implement the library in your project
+	module provides - 
+		reusability | maintainability | testability | extensibality | seperation
+	- the script type for module system must be defined as "module"	:	<script type="module"><script>
+	- every module can have a default member to export (the default member is directly imported) & every module can have one default
+	- you can't define directly constant value & DoM in module
+
+- Class in OOP - it is a program template | a class comprises of sample data and logic which you can implement and customize accoridng to requirements
+
+** Why we can't have varible and function in a class?
+=> Varible and functions are immutable and as calss is a template it only contains muttable members
+
+Configuring calss :
+1. Class decleration - is used for classes that are requested according to requrinment
+	class className{
+	}
+2. Class expression - is used for classes that are loaded according to state and situation
+	var refName = class { };
+
+Class Members -
+	1. properties - references in calss memory where you can store data [data is stored in property & you can store any type of data (primitive and non primitive)
+	2. methods
+	3. accessors
+	4. constructors
+
+** What is difference between varibles and property?
+=> varibles are immutable and properties are muttable
+
+** What is difference between function and methods?
+=> functions are immutable and methods are muttable
+
+class className {
+	Property = value;
+	}
+- in order to access members of a class, you have to create an instance for class -
+	let instance = new className;
+
+-"new" is a operator used for allocating memory dynamcally
+
+- properties are mutable, you can control behaviour of property using "accessors"
+
+- Accessors - define restrictions for reading and writing data into properties
+	accessors - 
+		get() [getter] - used for reading values from a property
+		set [setter] - used for writing data into property
+
+- Methods - define the actions to perform | all method specificatoin are similar to functions
+
+- Constructor - it is a special type of method in calss used for instantiation (creating of object) | it initilizes memory to store values at the time of allocating memory for calss | constructor is a sub routine that executes automatically for every object
+- in js constructor is anonymous [without name] | class name is used for constructor implicitly | it is defined by using "constructor" keyword
+- js class can't overload constructor (i.e. a class can have only one constructor)
+- js class can't have private constructor
+- js calss can't have static constructor
+
+Code Reusability - 
+	a) Aggregation	
+		- used to access the code of one calss in another by using an instance of calss | it is reffered as "Has-A-Relation" (without configuring relation between classes, you can access members of one class in another class)
+	b) Inheritance [single & multi level NOT multiple]
+		- in this a calss can extend another calss (configuring relation between classes) - reffered as Is-A-Relation
+		- members of base class are accessible in derived calss by using "super" keyword

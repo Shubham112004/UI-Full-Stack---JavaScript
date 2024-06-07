@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            function fact(n) {
+                if (n == 0) {
+                    return 1;
+                }
+                return n * fact(n - 1);         //a function is called within a function - recursion [batch programming]
+            }
+            document.write(`Factorial of 5 ${fact(5)}`);
+        }
+        f1();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+    <script>
+        class Product {
+            Name = "samsung tv";
+            Price = 59632.21;
+            Stock = true;
+            ShipppedTo = ["Delhi", "Hyd"];
+            Rating = { Rate: 4.3, Count: 152 };
+        }
+        let tv = new Product;
+        document.write(`Name = ${tv.Name}<br>Price = ${tv.Price}<br>Stock = ${tv.Stock}<br>Shipped To = ${tv.ShipppedTo}<br>Rate = ${tv.Rating.Rate}<br>Count = ${tv.Rating.Count}`);
+    </script>
+</body>
+
+</html>

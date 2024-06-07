@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+
+    <script>
+        class DataBase {
+            constructor() {
+                console.log("Connedted to database");
+            }
+            Insert() {
+                document.write('Record inserted');
+            }
+            Delete() {
+                document.write('Record deleted');
+            }
+        }
+        let db = new DataBase();
+        function InsertClick() {
+            db.Insert();
+        }
+        function DeleteClick() {
+            db.Delete();
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="InsertClick()">Insert</button>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+
+</html>

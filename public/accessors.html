@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessors</title>
+</head>
+
+<body>
+    <script>
+        var username = prompt("Enter user name")
+        var password = prompt("Enter password")
+        var productname = prompt("Enter product name")
+        class Product {
+            _productName;
+            get ProductName() {
+                return this._productName;
+            }
+            set ProductName(newName) {
+                if (username == "john" && password == "john11") {
+                    this._productName = newName;
+                } else {
+                    document.write("Unauthorized: you are not authorized to set product name")
+                }
+            }
+        }
+        let obj = new Product;
+        obj.ProductName = productname;
+        if (obj.ProductName) {
+            document.write(`product name : ${obj.ProductName}`);
+        }
+    </script>
+</body>
+
+</html>

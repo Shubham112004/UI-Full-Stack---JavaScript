@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Paramaters</title>
+</head>
+
+<body>
+    <script>
+        function Login(...loginDetails) {
+            const [userid, password, success, failure] = loginDetails;
+            if (userid == "john" && password == "john123") {
+                success();
+            } else {
+                failure();
+            }
+        }
+        Login('john', 'john123', function () { document.write('Login Success') }, function () { document.write('Invalid Details') });
+    </script>
+</body>
+
+</html>
