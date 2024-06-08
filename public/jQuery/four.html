@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("span").html("Out of Stock");
+            $("#stock").change(function () {
+                $("span").html(
+                    `
+                    ${($("#stock").prop("checked")) ? "Avilable" : "Out Of Stock"}
+                    `
+                )
+            })
+            $("select").change(function () {
+                $("#lstcities").html($("select").val())
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2>Stock</h2>
+        <input type="checkbox" name="" id="stock"> <span></span>
+        <h2>Shipped To</h2>
+        <select>
+            <option>Delhi</option>
+            <option>Hyd</option>
+        </select>
+        <p id="lstcities"></p>
+    </div>
+</body>
+
+</html>

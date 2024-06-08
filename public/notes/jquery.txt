@@ -1,0 +1,53 @@
+														jQuery
+jQuery is used for - 
+	client side interactions
+	DOM manipulations
+	Interactiong with API
+
+Accessing jQuery in web page - 
+<link rel="stylesheet" href="../../node_modules/jquery/dist/jquery.js">
+    <script>
+        $(function () {
+
+        })
+    </script>
+	or
+     <script>
+	$(document).ready(function () {
+
+        })
+    </script>
+
+- jQuery reference techniques-
+ jQuery can refer HTML elements by using all CSS selectors
+	$("p")	:	type selector
+	$("#para1")	:	id selector
+	$(".para2")	:	class selector etc...
+
+-jQuery DOM methods-
+	html()		:		innerHTML
+	text()		:		innerText
+	val()			:		value
+	attr()			:		attribute
+	prop()		:		property
+	append()
+	appendTo()
+	prepend()
+	before()
+	after() etc,..	
+
+-jQuery Events - 
+all js events are same in jQuery
+	onclick -- click
+	onchange -- change
+	onblur -- blur
+no event handler
+	<button onclick="InsertClick()">	- js
+	$("button").click(function(){})		- jQuery
+only "event" is allowed as event argument there is no "this" keyword
+	$)"button").click(function(event){
+		event.clientX;			//event properties
+		event.clientY;
+		event.target.name;		//object properties
+		event,target.id;
+	})

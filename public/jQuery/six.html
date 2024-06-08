@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            var details = [
+                { Name: "Samsung TV", Price: 45825.25 },
+                { Name: "Maxima Watch", Price: 1520.25 }
+            ];
+            $.each(details, function (key, value) {
+                $(`<tr><td>${value.Name}</td><td>${value.Price}</tr></td>`).appendTo("tbody");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

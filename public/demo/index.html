@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btnHome").click(function () {
+                $.ajax({
+                    method: 'GET',
+                    url: 'home.html'
+                })
+                    .then(function (response) {
+                        $("#section").html(response);
+                    })
+            })
+            $("#btnAbout").click(function () {
+                $.ajax({
+                    method: 'GET',
+                    url: 'about.html'
+                })
+                    .then(function (response) {
+                        $("#section").html(response);
+                    })
+            })
+            $("#btnContact").click(function () {
+                $.ajax({
+                    method: 'GET',
+                    url: 'contact.html'
+                })
+                    .then(function (response) {
+                        $("#section").html(response);
+                    })
+            })
+        })
+    </script>
+</head>
+
+<body class="container-fluid">
+    <header class="bg-primary text-center text-white">
+        <h1>Shubham Gaikwad</h1>
+    </header>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <button id="btnHome" class="btn btn-primary w-100">Home</button>
+            </div>
+            <div class="mb-3">
+                <button id="btnAbout" class="btn btn-primary w-100">About</button>
+            </div>
+            <div class="mb-3">
+                <button id="btnContact" class="btn btn-primary w-100">Contact</button>
+            </div>
+        </div>
+        <div class="col-9">
+            <div id="section">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
