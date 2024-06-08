@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - disabling right click</title>
+    <script>
+        document.oncontextmenu = function () {
+            alert('Right Click is Disabled on this page')
+            return false;
+        }
+        document.onselectstart = function () {
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Page is secure - you can't right click, copy, cut and paste</h2>
+</body>
+
+</html>

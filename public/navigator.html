@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+    <script>
+        function GetDetails() {
+            document.querySelector("p").innerHTML = `
+                Browser Family : ${navigator.appName}<br>
+                Language : ${navigator.language}<br>
+                Platform : ${navigator.platform}<br>
+                Cookie Enabled : ${(navigator.cookieEnabled) == true ? "Yes" : "No-Please enable cookies"}<br>
+                
+            `;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="GetDetails()">Get Details</button>
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Objects -location</title>
+    <script>
+        function getLocation() {
+            document.getElementById("host").innerHTML = location.host;
+            document.getElementById("protocol").innerHTML = location.protocol;
+            document.getElementById("port").innerHTML = location.port;
+            document.getElementById("path").innerHTML = location.pathname;
+            document.getElementById("href").innerHTML = location.href;
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend><button onclick="getLocation()">Get Location Details</button></legend>
+        <dl>
+            <dt>Server Name / Ip Address</dt>
+            <dd id="host"></dd>
+            <dt>Protocol</dt>
+            <dd id="protocol"></dd>
+            <dt>Port</dt>
+            <dd id="port"></dd>
+            <dt>URL</dt>
+            <dd id="href"></dd>
+            <dt>Path</dt>
+            <dd id="path"></dd>
+        </dl>
+    </fieldset>
+</body>
+
+</html>

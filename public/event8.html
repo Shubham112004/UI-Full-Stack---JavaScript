@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Timmer events</title>
+    <script>
+        function msg1() {
+            document.querySelector("h2").innerHTML = "Hello! - msg1";
+        }
+        function msg2() {
+            document.querySelector("h2").innerHTML = "how are you? - msg2";
+        }
+        function msg3() {
+            document.querySelector("h2").innerHTML = "Welcome to Js- msg3";
+        }
+        var m1, m2, m3;
+        function BodyLoad() {
+            m1 = setTimeout(msg1, 4000);
+            m2 = setTimeout(msg2, 6000);
+            m3 = setTimeout(msg3, 10000);
+        }
+        function Cancle2() {
+            clearTimeout(m2);
+        }
+    </script>
+</head>
+
+<body onload="BodyLoad()">
+    <h2 align="center"></h2>
+    <div align="center">
+        <button onclick="Cancle2()">Calcle message 2</button>
+    </div>
+</body>
+
+</html>

@@ -661,3 +661,161 @@ Code Reusability -
 	b) Inheritance [single & multi level NOT multiple]
 		- in this a calss can extend another calss (configuring relation between classes) - reffered as Is-A-Relation
 		- members of base class are accessible in derived calss by using "super" keyword
+
+** Why multiple inheritance is not supported for classes?
+=> because of constructor deadlock [deadlock is a situation where ever yconsturctor waits for each other]
+
+Polymorphism - it is ability of component to change its behaviour according to state and situation | it is a single base calss object using memoey of multiple derived classes
+
+JavaScript Browser Events - 
+	- event is a message sent by sender to suscriber in order to notify the cahnge 
+		onclick	=>	event
+		onclick="InsertClick()"	=>	event handler
+	- every event handler contains default arguments -
+		a) this	:	contains information about object [button]
+		b) event	:	contains information about event [onclick]
+	- object information contains
+		name, id, class, value,..
+	- event information contains 
+		clientX, clientY, keyCode, charCode, which,...
+	- event arguments
+		default arguments [this, e]
+		custom arguments
+
+- categories of Browser Events - 
+	1. keyboard events - handle interactions with regard to keys
+		onkeyup()		-		actions when key is relesed
+		onkeydown()		-		actions when user hold down a key
+		onkeypress()		-		actions when user keys-in another key
+		
+		event properties - 
+			keyCode		-		returns code of every key ASCII [A=65 to Z = 90]
+			charCode		-		code as per UTF standards [only char keys]
+			which		-		similar to keyCode [enchanced keyboards]
+			shiftKey		-		]
+			ctrlKey		-		]- return true or false
+			altKey		-		]
+
+	2. mouse events - 
+		onmouseover		-		actions when pointer is over element
+		onmouseout		-		actions when pointer move out of element
+		onmousedown		-		actions when mouse button is down
+		onmouseup		-		actions when mouse button is released
+		onmousemove		-		actions while mouse pointer is moving over elements
+
+		event properties -
+			clientX		-		gets X position
+			clientY		-		gets Y position
+
+	3. Clipboard events -
+		oncut			-		removed and kept in keyboard
+		oncopy			-		copied to clipboard
+		onpaste			-		inserted from clipboard
+
+** How to disable right click, cut, copy and paste like options in page?
+=> By disabling the event handler. You can disable event handler by returning false
+		oncut = return false
+		oncontextmenu	:	for right click
+		onselect			:	for selection
+		onselectstart		:	for extending selector 
+
+	4. Button events -
+		onclick			:	single click
+		ondblclick		:	double click
+		oncontextmenu	:	right click
+
+** How to handle click event for <a> element?
+=> <a href="javascript:function()"></a>
+
+	5. Form evelts -
+		onsubmit			:	defines actions when form is submitted 
+		onreset			:	defines actions when form resets
+
+	- these are the events written for <form> element, but they require a submit and reset button in form
+
+** How a form can be submitted on any another element event other than submit button?
+=> By using "form.submit()" method
+
+** Can a form have multiple submit buttons?
+=> Yes
+
+** Why you need multiple submit buttons? as all submit butons do same work?
+=> You can submit to varipus api or you can handle multiple functionalities
+
+** Form can have only one "onsubmit" then how it will manage various functionalities?
+=> By accessing submit button value
+
+	6. Focus events -
+		onfocus			:	when element gets focus
+		onblur			:	when element lost focus
+
+	7. Miscellaneous events -
+		onchange			:	when value changes
+		onselect			:	when selected
+
+	8. Touch events -
+		ontouchstart
+		ontouchend
+		ontouchmove
+
+	9. Timmer events -
+		setinterval()		:	it performs specified task at regular time intervals | it is kept in the memory and sent to process | it is not removed from memory hence it 							repeats until cleared from memoty
+							setInterval(functionName, interval);
+		clearInterval()		:	it clears the task form memory
+							clearInterval(functionReferenceName);
+		setTimeout()		:	it makes any task inactive for specific duration of time & invokes after the time interval | it can execute the given task only once for 								every object
+							setTimeout(functionName, interval);
+		clearTimeout()		:	it clears the task from memory and will not allow to execute
+							clearTimeout(refOfFunction);
+
+JavaScript Browser Objects -
+	set of objects to control browser -
+		a) window		-	it provides properties & methods that are used to control browser window - open() | close() | print()
+		b) location	-	it provides properties & methods to control browser location details - 
+						host		-	returns server name or IP address
+						port		-	returns port number
+						protocol	-	returns the protocol
+						href		-	gets and sets url dynamically
+						hash		-	gets the current reference "id"
+						search	-	gets the quqry string
+						reload	-	refresh the page
+						pathname	-	gets the current file path
+
+** How to access the current location details?
+=> location.hash : it is used to access the current location by using "id" reference | it can access a named location within the page
+
+		c) navigator	-	used to access current browser details
+						it includes - 
+							browser family | version | plugin's | mime types | geo location, etc...
+						properties -
+							appName
+							language
+							platform
+							plugins[]
+							mimeTypes[]
+							userAgent
+							cookieEnabled , etc...
+
+** How to get the status of Js in browser?
+=> by using html element - <noscript>
+
+**How to get MIME types?
+=> <script>
+	function f1(){
+		for(var item of navigator.mimeTypes){
+			document.write(item.type + "<br>");
+		}
+	}
+	f1();
+     </script>
+
+** How to access Geo Location?
+=> By using "geolocation.getCurrentPosition()"
+
+		d) history		-	it is used to access browser history details
+						history.length		:	returns total count of pages in history
+						history.back()		:	moves to previous page in browser history
+						history.forward()	:	moves to next page in browser history
+						history.go()		:	moves to specific page in browser history
+
+		e) document [DOM]

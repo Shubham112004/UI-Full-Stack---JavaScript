@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function BtnClick(obj, e, msg) {
+            if (e.ctrlKey) {
+                location.href = 'http://www.amazon.com';
+            } else {
+                document.write(`
+                Button Id : ${obj.id}<br>
+                Button class : ${obj.className}<br>
+                Clicked at X : ${e.clientX}<br>
+                Ctrl key : ${e.ctrlKey}
+                Message : ${msg}
+            `)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btnClick" class="btn btn-primary" onclick="BtnClick(this,event, 'Hello User')">Click Here</button>
+</body>
+
+</html>

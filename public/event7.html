@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - form events</title>
+    <script>
+        function SubmitClick() {
+            alert('Data will be submitted to API')
+            location.href = "http://fakestoreapi.com/products";
+        }
+        function ResetClick() {
+            alert('Data will be reset');
+        }
+        function CityChanged() {
+            // document.getElementById("frmReg").submit();
+            frmReg.submit();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frmReg" id="frmReg" onsubmit="SubmitClick()" onreset="ResetClick()">
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" name="userName" id=""></dd>
+            <dt>Age</dt>
+            <dd><input type="number" name="age" id=""></dd>
+            <dt>City</dt>
+            <dd>
+                <select name="City" onchange="CityChanged()">
+                    <option value="delhi">Delhi</option>
+                    <option value="hyd">Hyd</option>
+                </select>
+            </dd>
+        </dl>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>

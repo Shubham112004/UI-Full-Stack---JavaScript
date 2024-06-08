@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Mouse</title>
+    <script>
+        function GetPosition(e) {
+            var img = document.getElementById("img");
+            img.style.position = "fixed";
+            img.style.top = e.clientY + "px";
+            img.style.left = e.clientX + "px";
+            document.querySelector("h3").innerHTML = `X = ${e.clientX}<br>Y = ${e.clientY}`;
+        }
+    </script>
+</head>
+
+<body onmousemove="GetPosition(event)">
+    <div style="height: 1000px; display: flex;">
+        <h3></h3>
+    </div>
+    <img src="../public/assets/img.jpg" id="img" width="50" height="50">
+</body>
+
+</html>

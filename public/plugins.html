@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naviator - plugins</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            for (var item of navigator.plugins) {
+                document.write(item.name + "<br>")
+            }
+        }
+        f1();
+    </script>
+</body>
+
+</html>

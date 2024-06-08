@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        function databaseOperation(btnName) {
+            switch (btnName) {
+                case 'Insert':
+                    document.write('record inserted');
+                    break;
+                case 'Update':
+                    document.write('record updated');
+                    break;
+                case 'Delete':
+                    document.write('record deleted');
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button name="Insert" onclick="databaseOperation(this.name)">Insert</button>
+    <button name="Update" onclick="databaseOperation(this.name)">Update</button>
+    <button name="Delete" onclick="databaseOperation(this.name)">Delete</button>
+    <select onchange="databaseOperation(this.value)">
+        <option>Insert</option>
+        <option>Update</option>
+        <option>Delete</option>
+    </select>
+</body>
+
+</html>

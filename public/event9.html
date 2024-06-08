@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Timmer events</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var products = [];
+        var index = 0;
+        function getProduct() {
+
+            document.getElementById("productTitle").innerHTML = products[index].title;
+            document.getElementById("productImage").src = products[index].image;
+            index++;
+        }
+        function bodyLoad() {
+            fetch("http://fakestoreapi.com/products")
+                .then(res => res.json())
+                .then(data => {
+                    products = data;
+                    getProduct(0)
+                })
+        }
+        var slideShow;
+        function playClick() {
+            slideShow = setInterval(getProduct, 2500);
+            document.getElementById("status").innerHTML = "the slide show started!";
+        }
+        function pasuseClick() {
+            clearInterval(slideShow);
+            document.getElementById("status").innerHTML = "the slide show pasued";
+        }
+    </script>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+    <div class="card p-3">
+        <div class="card-header text-center">
+            <p id="status"></p>
+            <p id="productTitle"></p>
+        </div>
+        <div class="card-body text-center">
+            <img id="productImage" width="60%" height="525">
+        </div>
+        <div class="text-center card-footer">
+            <button class="btn btn-success" onclick="playClick()">
+                <span class="bi bi-play"></span>
+            </button>
+            <button class="btn btn-danger" onclick="pasuseClick()">
+                <span class="bi bi-pause"></span>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

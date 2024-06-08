@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <script>
+        var topics = [
+            { title: "Oracle", Details: "It is a database" },
+            { title: "Html", Details: "It is a markup language" }
+        ]
+        function bodyLoad() {
+            var term = document.querySelector("p").innerHTML = location.search.substring(location.search.indexOf("=") + 1);
+            document.querySelector("p").innerHTML = `
+                Topic = ${term}<br>
+                Details = ${topics.find(item => item.title == term).Details}
+            `;
+        }
+    </script>
+</head>
+
+<body onload="bodyLoad()">
+    <h2>Results</h2>
+    <p></p>
+</body>
+
+</html>

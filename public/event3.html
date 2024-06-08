@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Key</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var userDetails = [
+            { userName: 'john' },
+            { userName: 'john123' },
+            { userName: 'david' }
+        ];
+        function VerifyUser() {
+            var usenm = document.getElementById("txtName").value;
+            var msg = document.getElementById("msg");
+            for (var user of userDetails) {
+                if (user.userName == usenm) {
+                    msg.innerHTML = 'User Name Taken - Try Another';
+                    msg.style.color = "red"
+                    break
+                } else {
+                    msg.innerHTML = 'User name Avilabe'
+                    msg.style.color = "green"
+                }
+            }
+        }
+        function CapsWarning(e) {
+            if (e.keyCode >= 65 && e.keyCode <= 90) {
+                document.getElementById("capsWarning").style.display = "block";
+            } else {
+                document.getElementById("capsWarning").style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <fieldset>
+        <legend>Register</legend>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" id="txtName" onkeyup="VerifyUser()">
+                <div id="msg"></div>
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" id="txtPwd" onkeypress="CapsWarning(event)">
+                <div class="text-warning" id="capsWarning" style="display: none;">
+                    <span class="bi bi-exclamation-triangle"></span> Warning : Caps ON
+                </div>
+            </dd>
+        </dl>
+
+    </fieldset>
+</body>
+
+</html>

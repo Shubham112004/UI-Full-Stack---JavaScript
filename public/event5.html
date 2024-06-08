@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Clipboard</title>
+    <script>
+        function Cut() {
+            document.querySelector("h2").innerHTML = "Removed : Copied to clipboard";
+        }
+        function Copy() {
+            document.querySelector("h2").innerHTML = "Copied : Content Copied to clipboard";
+        }
+        function Paste() {
+            document.querySelector("h2").innerHTML = "Inserted : Inserted from clipboard";
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Your comments</legend>
+        <textarea oncut="Cut()" oncopy="Copy()" onpaste="Paste()" rows="4" cols="30">
+
+        </textarea>
+    </fieldset>
+    <h2 align="center"></h2>
+</body>
+
+</html>
